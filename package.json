@@ -1,0 +1,19 @@
+{
+  "name": "codepower",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd dev && node index.ts\" \"cd client && yarn start\" \"cd server && yarn dev\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "concurrently": "^4.1.0",
+    "docker-compose": "^0.17.2"
+  },
+  "dependencies": {}
+}

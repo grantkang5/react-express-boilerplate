@@ -1,0 +1,46 @@
+{
+   "name": "server",
+   "version": "0.0.1",
+   "license": "ISC",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@graphql-codegen/typescript": "^1.2.0",
+      "@types/body-parser": "^1.17.0",
+      "@types/cors": "^2.8.5",
+      "@types/express": "^4.16.1",
+      "@types/graphql": "^14.2.0",
+      "@types/node": "^8.0.29",
+      "concurrently": "^4.1.0",
+      "graphql-code-generator": "0.16.1",
+      "graphql-codegen-typescript-client": "0.16.1",
+      "graphql-codegen-typescript-common": "0.16.1",
+      "graphql-codegen-typescript-resolvers": "^0.18.2",
+      "graphql-tools": "^4.0.4",
+      "nodemon": "^1.19.0",
+      "ts-node": "8.1.0",
+      "tslint": "5.16.0",
+      "typescript": "3.4.5"
+   },
+   "dependencies": {
+      "@graphql-codegen/cli": "^1.2.0",
+      "@graphql-codegen/typescript-resolvers": "^1.2.0",
+      "@graphql-modules/core": "^0.7.3",
+      "apollo-server-express": "^2.5.0",
+      "body-parser": "^1.19.0",
+      "cors": "^2.8.5",
+      "express": "^4.17.0",
+      "graphql": "^14.3.0",
+      "graphql-toolkit": "^0.2.12",
+      "pg": "^7.3.0",
+      "reflect-metadata": "0.1.13",
+      "typeorm": "0.2.17"
+   },
+   "scripts": {
+      "generate": "gql-gen",
+      "generate:watch": "nodemon --exec npm run generate -e graphql",
+      "start:server": "ts-node src/index.ts",
+      "start:server:watch": "nodemon --exec npm run start:server -e ts",
+      "dev": "concurrently \"npm run generate:watch\" \"nodemon --exec ts-node src/index.ts\"",
+      "start": "npm run generate && npm run start:server"
+   }
+}
