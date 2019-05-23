@@ -1,11 +1,10 @@
 import React from "react";
 import "./App.css";
-import Something from "./Something";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Something />
+      Hello World
     </div>
   );
 };
