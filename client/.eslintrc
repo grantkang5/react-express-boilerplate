@@ -1,0 +1,16 @@
+{
+  "extends": ["react-app"],
+  "rules": {
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "jsx-boolean-value": false,
+    "interface-name" : false,
+    "variable-name": false,
+    "no-string-literal": false,
+    "no-namespace": false,
+    "interface-over-type-literal": false,
+    "no-shadowed-variable": false,
+    "array-type": false,
+    "jsx-a11y/anchor-is-valid": false
+  }
+}

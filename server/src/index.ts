@@ -1,21 +1,20 @@
-import { ApolloServer, gql } from "apollo-server-express";
+import { ApolloServer } from "apollo-server-express";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import * as express from "express";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
-import { User } from "./entity/User";
-import AppModule from './modules/app.module'
+import AppModule from "./modules/app.module";
 
 const PORT = 4000;
 
 createConnection()
-  .then(async (connection) => {
+  .then(async () => {
     const app = express()
       .use(cors())
       .use(bodyParser.json());
 
-    const { schema } = AppModule.forRoot({})
+    const { schema } = AppModule.forRoot({});
 
     const server = new ApolloServer({
       schema,
@@ -29,4 +28,4 @@ createConnection()
     server.applyMiddleware({ app });
     app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
   })
-  .catch((error) => console.log(error));
+  .catch(error => console.log(error));
