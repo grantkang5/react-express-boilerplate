@@ -13,6 +13,8 @@ const PORT = 4000;
 createConnection()
   .then(async () => {
     const app = express()
+      .use(helmet())
+      .use(morgan('dev'))
       .use(cors())
       .use(bodyParser.json());
 
