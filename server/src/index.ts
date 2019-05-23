@@ -1,7 +1,9 @@
 import { ApolloServer } from "apollo-server-express";
-import * as bodyParser from "body-parser";
-import * as cors from "cors";
 import * as express from "express";
+import * as bodyParser from "body-parser";
+import * as helmet from "helmet";
+import * as morgan from "morgan";
+import * as cors from "cors";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import AppModule from "./modules/app.module";
@@ -12,6 +14,8 @@ createConnection()
   .then(async () => {
     const app = express()
       .use(cors())
+      .use(helmet())
+      .use(morgan('combined'))
       .use(bodyParser.json());
 
     const { schema } = AppModule.forRoot({});
