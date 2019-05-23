@@ -14,8 +14,6 @@ createConnection()
   .then(async () => {
     const app = express()
       .use(cors())
-      .use(helmet())
-      .use(morgan('combined'))
       .use(bodyParser.json());
 
     const { schema } = AppModule.forRoot({});
@@ -26,7 +24,7 @@ createConnection()
     });
 
     app.get("/secret", (req, res) => {
-      res.send("ZA WARUDO");
+      res.status(200).send("ZA WARUDO");
     });
 
     server.applyMiddleware({ app });
