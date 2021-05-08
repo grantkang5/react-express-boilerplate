@@ -39,7 +39,7 @@
       "morgan": "^1.9.1",
       "pg": "^7.3.0",
       "reflect-metadata": "0.1.13",
-      "typeorm": "0.2.17"
+      "typeorm": "0.2.25"
    },
    "scripts": {
       "generate": "gql-gen",
